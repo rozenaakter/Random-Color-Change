@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content-container">
+        <nav class="nav">
+            <input type="button" value="purple" class="btn purple">
+            <input type="button" value="blue" class="btn blue">
+            <input type="button" value="red" class="btn red">
+            <input type="button" value="green" class="btn green">
+            <input type="button" value="pink" class="btn pink">
+        </nav>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.btn');
+
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                color = btn.value;
+                changeBackground(color);
+            });
+        });
+
+        const body = document.body;
+
+        function changeBackground(colors) {
+            body.className = '';
+            switch (colors) {
+                case 'purple':
+                    body.classList.add('purple');
+                    break;
+                case 'blue':
+                    body.classList.add('blue');
+                    break; 
+                case 'red':
+                    body.classList.add('red');
+                    break;
+                case 'green':
+                    body.classList.add('green');
+                    break; 
+                case 'pink':
+                    body.classList.add('pink'); 
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
